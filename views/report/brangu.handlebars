@@ -1,0 +1,22 @@
+<h1>Brangiausios 3 prekės</h1>
+{{> data}}
+<table>
+  <tr>
+    <th>Prekė</th>
+    <th>Kiekis</th>
+    <th>Kaina </th>
+    <th>Data</th>
+    <th>Viso</th>
+  </tr>
+  {{#each ataskaita}}
+  <tr>
+    <td>{{preke}}</td>
+    <td>{{kiekis}}</td>
+    <td>{{kaina}}</td>
+    <td>{{dateFormat data}}</td>
+    <td>{{viso}}</td>
+  </tr>
+  {{/each}}
+</table>
+ <br>
+<a href="/">Pagrindinis</a>

@@ -1,0 +1,8 @@
+<form action="/tipas" method="post">
+  {{#if tipas}}
+  <input type="hidden" name="id" value="{{tipas.id}}">
+  {{/if}}
+  Pavadinimas: <input type="text" name="pavadinimas" value="{{tipas.pavadinimas}}"><br>
+  <input type="submit" value="Save">
+  <a href="/tipai">Cancel</a>
+</form>

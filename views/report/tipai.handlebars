@@ -1,0 +1,16 @@
+<h1>Išlaidos pagal tipą</h1>
+{{> data}}
+<table>
+  <tr>
+    <th>Tipas</th>
+    <th>Suma</th>
+  </tr>
+  {{#each ataskaita}}
+  <tr>
+    <td>{{pavadinimas}}</td>
+    <td>{{suma}}</td>
+  </tr>
+  {{/each}}
+</table>
+ <br>
+<a href="/">Pagrindinis</a>

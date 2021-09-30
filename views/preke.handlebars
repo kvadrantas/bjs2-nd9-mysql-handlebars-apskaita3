@@ -1,0 +1,24 @@
+<form action="/preke" method="post">
+  {{#if preke}}
+  <input type="hidden" name="id" value="{{preke.id}}">
+  <input type="hidden" name="cekisId" value="{{preke.cekisId}}">
+  {{/if}}
+  {{#if cekisId}}
+  <input type="hidden" name="cekisId" value="{{cekisId}}">
+  {{/if}}
+  Preke: <input type="text" name="preke" value="{{preke.preke}}"><br>
+  Kiekis: <input type="text" name="kiekis" value="{{preke.kiekis}}"><br>
+  Kaina: <input type="text" name="kaina" value="{{preke.kaina}}"><br>
+  Tipas: <select name="tipas">
+      {{#each tipai}}
+      <option value="{{id}}" {{#if (eq id ../preke.tipas)}}selected{{/if}}>{{pavadinimas}}</option>
+      {{/each}}
+  </select><br>
+  <input type="submit" value="Save">
+  {{#if preke}}
+  <a href="/cekis/{{preke.cekisId}}">Cancel</a>
+  {{/if}}
+  {{#if cekisId}}
+  <a href="/cekis/{{cekisId}}">Cancel</a>
+  {{/if}}
+</form>

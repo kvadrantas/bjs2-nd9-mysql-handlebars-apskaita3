@@ -1,0 +1,11 @@
+<h1>Čekių sąrašas</h1>
+<a href="/cekis">Naujas</a>
+<ul>
+  {{#each cekiai}}
+  <li>
+    <a href="/cekis/{{id}}">{{dateFormat data}} {{parduotuve}}</a>
+    <a href="/cekis/{{id}}/del">X</a>
+  </li>
+  {{/each}}
+</ul>
+<a href="/">Pagrindinis</a>

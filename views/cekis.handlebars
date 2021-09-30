@@ -1,0 +1,36 @@
+<form action="/cekis" method="post">
+  {{#if cekis}}
+  <input type="hidden" name="id" value="{{cekis.id}}">
+  {{/if}}
+  Data: <input type="date" name="data" value="{{dateFormat cekis.data}}"><br>
+  Parduotuvė: <input type="text" name="parduotuve" value="{{cekis.parduotuve}}"><br>
+  <input type="submit" value="Save">
+  <a href="/cekiai">Cancel</a>
+</form>
+
+{{#if cekis}}
+<h2>Prekės:</h2>
+<a href="/preke?cekisId={{cekis.id}}">Nauja</a>
+{{/if}}
+{{#if prekes}}
+<table>
+  <tr>
+    <th>id</th>
+    <th>preke</th>
+    <th>kiekis</th>
+    <th>kaina</th>
+    <th>tipas</th>
+    <th></th>
+  </tr>
+  {{#each prekes}}
+  <tr>
+    <td>{{id}}</td>
+    <td><a href="/preke/{{id}}">{{preke}}</a></td>
+    <td>{{kiekis}}</td>
+    <td>{{kaina}}</td>
+    <td>{{tipas}}</td>
+    <td><a href="/preke/{{id}}/del">X</a></td>
+  </tr>
+  {{/each}}
+</table>
+{{/if}}
